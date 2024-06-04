@@ -1,6 +1,6 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom'
-import Dashboard from './Views/Dashboard';
+import Dashboard from './views/Dashboard'
 
 const App = () => {
     return (
