@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import '../styles/dashboard.css'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
-import MyCalendar from "../components/BigCalendar";
+import BigCalendar from "../components/BigCalendar";
 
 
 
@@ -13,12 +13,14 @@ const Dashboard = () => {
     const handleDateChange = (date) => {
         setValue (date);
     }
+
+    const onNavigate = useCallback((newDate) => setValue(newDate), [setValue])
     return (<div className="dashboard-container">
         <div>
         <Calendar onChange={handleDateChange} value={value} />
        
         </div>
-        <MyCalendar/>
+        <BigCalendar date={value} onNavigate={onNavigate}/>
 
         </div>
     );
