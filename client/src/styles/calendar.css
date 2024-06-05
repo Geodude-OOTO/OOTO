@@ -1,0 +1,32 @@
+/* CustomCalendar.css */
+
+.react-calendar {
+    background-color: #F2F4F8;
+    border: none; /* Optional: To remove the default border */
+    border-radius: 8px; /* Optional: To add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: To add a subtle shadow */
+    padding: 16px; /* Optional: To add some padding */
+  }
+  
+  .react-calendar__tile {
+    background: #ffffff; /* Default background for each tile */
+    color: #333333; /* Default text color */
+    border-radius: 4px; /* Optional: To add rounded corners to tiles */
+    padding: 8px; /* Optional: To add padding to each tile */
+  }
+  
+  .react-calendar__tile--active {
+    background: #007bff; /* Background for active tile */
+    color: #ffffff; /* Text color for active tile */
+  }
+  
+  .react-calendar__navigation {
+    background: #F2F4F8; /* Same background as the calendar */
+    color: #333333; /* Default text color for navigation */
+    padding: 8px; /* Optional: To add padding to the navigation */
+  }
+  
+  .react-calendar__navigation__label {
+    font-weight: bold; /* Bold text for the navigation label */
+  }
+  

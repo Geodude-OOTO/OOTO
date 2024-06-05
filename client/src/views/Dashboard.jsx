@@ -2,6 +2,8 @@ import React, { useState, useCallback, useEffect } from "react";
 import '../styles/dashboard.css'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import '../styles/calendar.css'
+
 
 import BigCalendar from "../components/BigCalendar";
 
