@@ -1,0 +1,9 @@
+body {
+    background-color: #F2F4F8;
+}
+
+.dashboard-container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
