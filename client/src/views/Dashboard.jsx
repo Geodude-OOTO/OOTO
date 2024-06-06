@@ -3,7 +3,10 @@ import '../styles/dashboard.css'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
+import '../styles/workStatusModal.css'
+
 import BigCalendar from "../components/BigCalendar";
+import WorkStatusModal from "../components/WorkStatusModal";
 
 const Dashboard = () => {
     // value state variable is set to the current date initially. setValue is used to update this date.
@@ -11,6 +14,12 @@ const Dashboard = () => {
     //currently disabling navigation, need to see what side effects are overwritting 
     const [activeStartDate, setActiveStartDate] = useState(new Date());
 
+    //
+    const [modalToggle, setModalToggle] = useState(false);
+    const handleModalToggle = ()=>{
+        setModalToggle(!modalToggle);
+        console.log("Inside modal toggle: ", modalToggle);
+    }
     // handleDateChange function updates the date state with the new date selected on the react-calendar.
     const handleDateChange = (date) => {
         setValue(date);
@@ -31,6 +40,8 @@ const Dashboard = () => {
     
     return (
         <div className="dashboard-container">
+            <button type="button" onClick={()=>{handleModalToggle()}}>Add Work Status</button>
+            <WorkStatusModal open={modalToggle} close={handleModalToggle}/>
             <div>
                 <Calendar onChange={handleDateChange} value={value} activeStartDate={activeStartDate} onActiveStartDateChange={handleActiveDateChange}  />
             </div>
