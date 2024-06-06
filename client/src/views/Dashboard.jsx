@@ -1,11 +1,12 @@
 import React, { useState, useCallback, useEffect } from "react";
 import '../styles/dashboard.css'
 import Calendar from 'react-calendar';
+import BigCalendar from "../components/BigCalendar";
 import 'react-calendar/dist/Calendar.css';
 import '../styles/calendar.css'
 
 
-import BigCalendar from "../components/BigCalendar";
+
 
 const Dashboard = () => {
     // value state variable is set to the current date initially. setValue is used to update this date.

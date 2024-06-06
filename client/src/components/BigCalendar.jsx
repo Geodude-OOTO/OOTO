@@ -2,8 +2,6 @@ import React from 'react';
 import { Calendar, momentLocalizer, Views } from 'react-big-calendar'
 import { useMemo, useState, useCallback } from 'react';
 import moment from 'moment'
-import '../styles/bigcalendar.css'
-import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 // Setup the localizer by providing the moment (or globalize, or Luxon) Object to the correct localizer.
 const localizer = momentLocalizer(moment); // Using moment to localize dates
