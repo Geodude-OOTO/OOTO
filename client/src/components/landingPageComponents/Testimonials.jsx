@@ -2,9 +2,9 @@ import React from 'react';
 
 const Testimonials = () => {
     return (
-        <div className="tile-container">
+        <div>
             <h2>Here is what our customers say about OOTO</h2>
-            <div>
+            <div className="tile-container">
                 <p>With a hybrid work schedule, it can be hard to see who is working, 
                     but now with OOTO I know that my team is hard at work wherever they are.
                 </p>
