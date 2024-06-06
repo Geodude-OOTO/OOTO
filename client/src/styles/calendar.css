@@ -1,32 +1,55 @@
-/* CustomCalendar.css */
+.react-calendar-container {
+  margin-top: -265px; /* Adjust as needed */
+    margin-left: 10px; /* Adjust as needed */
+}
+
 
 .react-calendar {
-    background-color: #F2F4F8;
-    border: none; /* Optional: To remove the default border */
-    border-radius: 8px; /* Optional: To add rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: To add a subtle shadow */
-    padding: 16px; /* Optional: To add some padding */
-  }
-  
-  .react-calendar__tile {
-    background: #ffffff; /* Default background for each tile */
-    color: #333333; /* Default text color */
-    border-radius: 4px; /* Optional: To add rounded corners to tiles */
-    padding: 8px; /* Optional: To add padding to each tile */
-  }
-  
-  .react-calendar__tile--active {
-    background: #007bff; /* Background for active tile */
-    color: #ffffff; /* Text color for active tile */
-  }
-  
-  .react-calendar__navigation {
-    background: #F2F4F8; /* Same background as the calendar */
-    color: #333333; /* Default text color for navigation */
-    padding: 8px; /* Optional: To add padding to the navigation */
-  }
-  
-  .react-calendar__navigation__label {
-    font-weight: bold; /* Bold text for the navigation label */
-  }
-  
+  width: 248px; /* Set the width */
+  height: 216px; /* Set the height */
+  background-color: #F2F4F8;
+  border: none; /* Optional: To remove the default border */
+  border-radius: 8px; /* Optional: To add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: To add a subtle shadow */
+  padding: 8px; /* Adjust padding to fit within the new size */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.react-calendar__month-view__days__day {
+  flex: 1 0 14%; /* Adjust flex basis to fit within the container */
+  max-width: 14%; /* Ensure tiles don't exceed the container's width */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.react-calendar__tile {
+  background: #ffffff; /* Default background for each tile */
+  color: #333333; /* Default text color */
+  border-radius: 4px; /* Optional: To add rounded corners to tiles */
+  padding: 4px; /* Adjust padding to fit within the new size */
+  text-align: center; /* Center text within tiles */
+}
+
+.react-calendar__tile--active {
+  background: #007bff; /* Background for active tile */
+  color: #ffffff; /* Text color for active tile */
+}
+
+.react-calendar__navigation {
+  background: #F2F4F8; /* Same background as the calendar */
+  color: #333333; /* Default text color for navigation */
+  padding: 4px; /* Adjust padding to fit within the new size */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.react-calendar__navigation__label {
+  font-weight: bold; /* Bold text for the navigation label */
+}
+
+.react-calendar__navigation button {
+  min-width: unset; /* Remove minimum width to fit within the new size */
+  padding: 4px; /* Adjust padding to fit within the new size */
+}

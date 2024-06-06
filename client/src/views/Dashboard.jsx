@@ -34,10 +34,10 @@ const Dashboard = () => {
     
     return (
         <div className="dashboard-container">
-            <div>
+            <div className="react-calendar-container">
                 <Calendar onChange={handleDateChange} value={value} activeStartDate={activeStartDate} onActiveStartDateChange={handleActiveDateChange}  />
             </div>
-            <div className="myCustomHeight">
+            <div className="react-big-calendar-container">
             <BigCalendar date={value} onNavigate={onNavigate} />
             </div>
         </div>
