@@ -1,8 +1,15 @@
 import React from 'react';
+import Benefits from '../components/landingPageComponents/Benefits';
+import NavBar from '../components/landingPageComponents/NavBar';
+import Testimonials from '../components/landingPageComponents/Testimonials';
 
 const LandingPage = () => {
     return (
-        <div>This is the landing page</div>
+        <div>
+            <NavBar/>
+            <Benefits/>
+            <Testimonials/>
+        </div>
     )
 };
 
