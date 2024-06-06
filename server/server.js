@@ -3,7 +3,8 @@ const app = express();
 const path = require('path');
 const port = process.env.PORT || 3000;
 const {Pool} = require('pg'); 
-require('dotenv').config();
+const dotenv = require('dotenv'); 
+dotenv.config();
 const userRoutes = require('./routes/userRoutes');
 const bodyParser = require('body-parser');
 
