@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Testimonials = () => {
     return (
         <div>
@@ -8,7 +9,7 @@ const Testimonials = () => {
                 <p>With a hybrid work schedule, it can be hard to see who is working, 
                     but now with OOTO I know that my team is hard at work wherever they are.
                 </p>
-                <img src=".../assets/avatar.png"/>
+                <img src='.../assets/avatar.png'/>
                 <h3>Michael</h3>
                 <h4>Regional Manager</h4>
             </div>
