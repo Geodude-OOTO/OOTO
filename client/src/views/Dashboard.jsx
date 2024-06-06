@@ -31,11 +31,16 @@ const Dashboard = () => {
     const handleActiveDateChange = ({ activeStartDate }) => {
         setActiveStartDate(activeStartDate);
     };
+
+    const formatShortWeekday = (locale, date) => {
+        return date.toLocaleDateString(locale, { weekday: 'narrow' }); // This returns a single letter
+    };
+    
     
     return (
         <div className="dashboard-container">
             <div className="react-calendar-container">
-                <Calendar onChange={handleDateChange} value={value} activeStartDate={activeStartDate} onActiveStartDateChange={handleActiveDateChange}  />
+                <Calendar onChange={handleDateChange} value={value} activeStartDate={activeStartDate} onActiveStartDateChange={handleActiveDateChange} formatShortWeekday={formatShortWeekday}  />
             </div>
             <div className="react-big-calendar-container">
             <BigCalendar date={value} onNavigate={onNavigate} />

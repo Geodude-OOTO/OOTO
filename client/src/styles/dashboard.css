@@ -1,3 +1,7 @@
+* {
+    font-family: "Roboto", sans-serif;
+}
+
 body {
     background-color: #F2F4F8;
 }
@@ -6,7 +10,6 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center; 
-    justify-content: center;
     height: 100vh;
-    gap: 20px;
+    gap: 40px;
 }
