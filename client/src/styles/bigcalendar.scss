@@ -3,6 +3,14 @@
 @import './variables';
 @import 'react-big-calendar/lib/sass/styles';
 
+.myCustomHeight {
+  flex: 1; // Allow the div to take available space
+  display: flex;
+  flex-direction: column;
+  height: 80%; // Adjust the height as needed
+  max-width: 1000px; // Optional: Set a max-width to prevent it from stretching too much
+}
+
 // General Calendar Styles
 .rbc-calendar {
   background-color: $main-bg-color;

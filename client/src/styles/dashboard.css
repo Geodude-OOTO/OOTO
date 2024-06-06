@@ -2,8 +2,11 @@ body {
     background-color: #F2F4F8;
 }
 
-.dashboard-container{
+.dashboard-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center; 
     height: 100vh;
+    gap: 20px; 
 }

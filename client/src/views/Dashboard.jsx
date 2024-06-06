@@ -37,7 +37,9 @@ const Dashboard = () => {
             <div>
                 <Calendar onChange={handleDateChange} value={value} activeStartDate={activeStartDate} onActiveStartDateChange={handleActiveDateChange}  />
             </div>
+            <div className="myCustomHeight">
             <BigCalendar date={value} onNavigate={onNavigate} />
+            </div>
         </div>
     );
 }

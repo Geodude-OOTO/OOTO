@@ -23,8 +23,7 @@ const BigCalendar = ({ date, onNavigate }) => {
     const allowedViews = [Views.DAY, Views.AGENDA];
     
     return (
-        <div className="myCustomHeight">
-            <Calendar
+             <Calendar
                 defaultDate={date}
                 date={date}
                 localizer={localizer}
@@ -35,7 +34,6 @@ const BigCalendar = ({ date, onNavigate }) => {
                 views={allowedViews}
                 onView={onView}
             />
-        </div>
     );
 }
 
