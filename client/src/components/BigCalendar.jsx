@@ -12,6 +12,16 @@ const BigCalendar = ({ date, onNavigate }) => {
     //     defaultDate: new Date()
     // }), []);
 
+     //testing the calendar using this events array of objects
+
+     const events = [
+        {
+          "title": "Moises Gomez, Currently in Dubai",
+          "start": new Date('June 6, 2024 03:24:00'),
+          "end": new Date('June 6, 2024 10:00:00')
+        }
+    ]
+
     /* The view state variable is used to set the default view of the big calendar upon render. Default is day view.
        We are importing the Views object on line 2 */
     const [view, setView] = useState(Views.DAY);
@@ -33,6 +43,7 @@ const BigCalendar = ({ date, onNavigate }) => {
                 view={view}
                 views={allowedViews}
                 onView={onView}
+                events={events}
             />
     );
 }

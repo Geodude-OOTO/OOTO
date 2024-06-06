@@ -9,6 +9,7 @@ import '../styles/calendar.css'
 
 
 const Dashboard = () => {
+
     // value state variable is set to the current date initially. setValue is used to update this date.
     const [value, setValue] = useState(new Date());
     //currently disabling navigation, need to see what side effects are overwritting 
@@ -40,10 +41,10 @@ const Dashboard = () => {
     return (
         <div className="dashboard-container">
             <div className="react-calendar-container">
-                <Calendar onChange={handleDateChange} value={value} activeStartDate={activeStartDate} onActiveStartDateChange={handleActiveDateChange} formatShortWeekday={formatShortWeekday}  />
+                <Calendar onChange={handleDateChange} value={value} activeStartDate={activeStartDate} onActiveStartDateChange={handleActiveDateChange} formatShortWeekday={formatShortWeekday} />
             </div>
             <div className="react-big-calendar-container">
-            <BigCalendar date={value} onNavigate={onNavigate} />
+            <BigCalendar date={value} onNavigate={onNavigate}  />
             </div>
         </div>
     );
