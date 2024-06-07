@@ -1,19 +1,12 @@
 import React, { useState, useCallback, useEffect } from "react";
-import Modal from "react-modal";
 
-const SignUpModal = () => {
+const SignUp = () => {
     return (
-        <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Sign Up Modal"
-      >
+      <div>
         <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Sign Up</h2>
         <button onClick={closeModal}>close</button>
         <div>This is the sign up modal</div>
-        <form id="signup" action="/signUp" method="POST">
+        <form id="signup" action="user/register" method="POST">
             <input id="user" name="user" placeholder="user" type="text"></input>
             <br></br>
             <input id="email" name="email" placeholder="email address" type="text"></input>
@@ -22,8 +15,8 @@ const SignUpModal = () => {
             <br></br>
             <button id="submit" type="submit">Sign Up!</button>
         </form>
-      </Modal>
+      </div>
     )
 };
 
-export default SignUpModal;
+export default SignUp;
