@@ -1,0 +1,10 @@
+body {
+    background-color: #F2F4F8;
+}
+
+.tile-container {
+    border-radius: 25px;
+    border: 2px solid #32B86A;
+    background-color:  #C1FBD3;
+}
+
