@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router(); 
 const pool = require('../config/database.js');  
 const bcrypt = require('bcrypt'); 
-const  jwtGenerator = require("../utils/jwtGenerator.js")
+const  jwtGenerator = require("../utils/jwtGenerator.js");
+const validInfo = require('./validInfo.js');
 const userRegister = async(req, res, next) => { 
     try { 
         console.log('Request Body:', req.body);
