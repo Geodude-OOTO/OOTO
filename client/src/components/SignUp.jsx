@@ -24,4 +24,6 @@ const SignUpModal = () => {
         </form>
       </Modal>
     )
-}
+};
+
+export default SignUpModal;
