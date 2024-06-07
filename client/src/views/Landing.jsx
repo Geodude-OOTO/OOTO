@@ -3,31 +3,37 @@ import LogIn from '../components/logIn.jsx'; // i changed the file name to capit
 import SignUp from '../components/SignUp.jsx';
 import ReactModal from 'react-modal';
 
-//logic for opening and closing login modal:
 
+
+
+const Landing = () => {
+
+    //logic for opening and closing signUp modal:
 const [modalOpen, setOpen] = useState(false);
 function handleCloseModal() {
     setOpen(false);
   };
+
 //click handler for sign up button to open modal:
 const signUpClickHandler = (event) => {
     event.preventDefault();
-    return setOpen(true);
+    setOpen(true);
+
 };
 
-<ReactModal isOpen={modalIsOpen}
-          shouldCloseOnEsc={true}
-          className='overlay'
-          onRequestClose={handleCloseModal}
-          shouldCloseOnOverlayClick={true}
-          ></ReactModal>
 
-const Landing = () => {
-    //this returns the login field
     return (
         <div>
              <LogIn></LogIn>
              <p>Don't have an account yet?</p> <button onclick={signUpClickHandler}>sign up!</button>
+             {modalOpen} && 
+             <ReactModal isOpen={modalOpen}
+                shouldCloseOnEsc={true}
+                className='overlay'
+                onRequestClose={handleCloseModal}
+                shouldCloseOnOverlayClick={true}
+                >
+                </ReactModal>
         </div>
 
     )
