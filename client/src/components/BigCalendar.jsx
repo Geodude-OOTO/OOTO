@@ -18,7 +18,7 @@ const BigCalendar = ({ date, onNavigate }) => {
         {
           "title": "Moises Gomez, Currently in Dubai",
           "start": new Date('June 6, 2024 03:24:00'),
-          "end": new Date('June 6, 2024 10:00:00')
+          "end": new Date('June 10, 2024 10:00:00')
         }
     ]
 
