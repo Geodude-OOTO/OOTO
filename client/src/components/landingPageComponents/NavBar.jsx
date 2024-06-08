@@ -1,11 +1,12 @@
 import React from "react";
+import UserAccount from "./UserAccountContainer";
 import logo from '../../assets/logo.svg';
 
 const NavBar = () => {
     return (
         <div>
             <img src={logo}/>
-            <button>This button will be where the login component is.</button>
+            <UserAccount/>
         </div>
     )
 };
