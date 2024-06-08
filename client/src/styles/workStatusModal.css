@@ -16,6 +16,18 @@
 
    
 }
+
+#ws-addEvent-bttn{
+  background-color: #32B86A;
+  border-radius: 5px;
+  border-color: #32B86A;
+  border-color: #32B86A;
+  /* box-shadow: .5px .5px .5px #32B86A; */
+  box-shadow: none;
+  color: whitesmoke;
+  margin-bottom: 8px;
+}
+
 .modal-wrapper::before {
    /* position: absolute; */
    width: 100vw;
@@ -73,6 +85,10 @@
   margin-bottom: 6px;
 }
 
+#ws-submit-bttn {
+  margin-top: 12px;
+}
+
 #wsmodal-content-container {
   display: flex;
 }
@@ -94,7 +110,7 @@
   justify-content: center;
   background: white;
   border-radius: 5px;
-  width: 250px;
+  width: 270px;
 
   margin-bottom: 8px;
 
