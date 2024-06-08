@@ -6,6 +6,8 @@ router.post('/', eventController.addEvent, (req, res) => {
     res.status(200).json(res.locals);
 }) 
 
-router.get();
+router.get('/', eventController.getEvents, (req, res) => {
+    res.status(200).json(res.locals);
+});
 
 module.exports = router;

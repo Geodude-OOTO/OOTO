@@ -65,8 +65,8 @@ const userLogin = async (req, res, next) => {
 
     //4. give them the jwt token
     const token = jwtGenerator(user.rows[0].user_id);  
-    res.cookie('user_id', user.rows[0].user_id);
-    res.json({ token });
+    //res.cookie('user_id', user.rows[0].user_id);
+    //res.json({ token });
  } catch(error) {
 
  }

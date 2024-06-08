@@ -8,7 +8,7 @@ dotenv.config();
 const userRoutes = require('./routes/userRoutes'); 
 const dashboardRoute = require('./routes/dashboardRoute');
 const bodyParser = require('body-parser'); 
-const eventRoutes = require('./routes/eventsRoute');
+const eventRoutes = require('./routes/eventsRoute.js');
 
 app.use(express.json());
 // Test the database connection
