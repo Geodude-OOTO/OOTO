@@ -13,3 +13,13 @@ body {
     height: 100vh;
     gap: 40px;
 }
+
+.header-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto; /* Adjust as needed */
+    z-index: -1; /* Position logo behind content */
+   
+}

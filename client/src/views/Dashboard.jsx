@@ -71,7 +71,7 @@ const Dashboard = () => {
     
     return (
         <div className="dashboard-container">
-            <button type="button" onClick={()=>{handleModalToggle()}}>Add Work Status</button>
+            {/* <button type="button" onClick={()=>{handleModalToggle()}}>Add Work Status</button> */}
             <WorkStatusModal open={modalToggle} close={handleModalToggle} setEvents={setEvents}/>
             <div className="react-calendar-container">
                 <button id="ws-addEvent-bttn" onClick={()=>{handleModalToggle()}}>Add Work Status</button>
