@@ -6,7 +6,7 @@ import moment from 'moment'
 // Setup the localizer by providing the moment (or globalize, or Luxon) Object to the correct localizer.
 const localizer = momentLocalizer(moment); // Using moment to localize dates
 
-const BigCalendar = ({ date, onNavigate }) => {
+const BigCalendar = ({ date, onNavigate, events}) => {
     // Commenting this since we are already getting a date from the dashboard container
     // const {defaultDate} = useMemo(() => ({
     //     defaultDate: new Date()
@@ -14,13 +14,13 @@ const BigCalendar = ({ date, onNavigate }) => {
 
      //testing the calendar using this events array of objects
 
-     const events = [
-        {
-          "title": "Moises Gomez, Currently in Dubai",
-          "start": new Date('June 7, 2024 14:24:00'),
-          "end": new Date('June 7, 2024 16:00:00')
-        }
-    ]
+    //  const events = [
+    //     {
+    //       "title": "Moises Gomez, Currently in Dubai",
+    //       "start": new Date("2024-06-07T21:24:00.000Z"),
+    //       "end": new Date("2024-06-07T23:00:00.000Z")
+    //     }
+    // ]
 
     /* The view state variable is used to set the default view of the big calendar upon render. Default is day view.
        We are importing the Views object on line 2 */
