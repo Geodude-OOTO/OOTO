@@ -1,5 +1,5 @@
 import React, {useState, useRef} from "react";
-import {Button, CalendarCell, CalendarGrid, CalendarGridBody, CalendarGridHeader, CalendarHeaderCell, DateInput, DateRangePicker, DateSegment, Dialog, FieldError, Group, Heading, Label, Popover, RangeCalendar, Text} from 'react-aria-components';
+import {Button,TimeField, CalendarCell, CalendarGrid, CalendarGridBody, CalendarGridHeader, CalendarHeaderCell, DateInput, DateRangePicker, DateSegment, Dialog, FieldError, Group, Heading, Label, Popover, RangeCalendar, Text} from 'react-aria-components';
 
 
 
@@ -7,17 +7,27 @@ const WorkStatusModal = ({open, close})=>{
 if(open === false) return null;
 
 // let [range, setRange] = React.useState<DateRange | null>(null);
+let [startTime, setStartTime] = useState(null);
+let [endTime, setEndTime] = useState(null);
+
 
 async function submitStatus(){
    const status = document.querySelector('#workstatus').value;
+   const dateEle = document.getElementsByClassName('react-aria-Input');
+   
+   const startDate = dateEle[0].value;
+   const endDate = dateEle[1].value ;
 
-   if(!status) return alert('Please fill all input fields');
+   if(!status | !startDate | !endDate | !startTime | !endDate ) return alert('Please fill all input fields');
 
    const reqData = await JSON.stringify({
-      status
+      title: status,
+      start: new Date(`${startDate} ${startTime}`).toISOString(),
+      end: new Date(`${endDate} ${endTime}`).toISOString(),
    })
 
-   const req = await fetch('/XXXXX', {
+   console.log(reqData)
+   const req = await fetch('/api/events', {
       method: 'POST',
       headers: { 'Content-type': 'application/json'},
       body: reqData,
@@ -25,6 +35,7 @@ async function submitStatus(){
 
    if(req.status == 200){
       alert('Success');
+      const resData = await req.json();
       close()
    }else{
       return alert('Unsuccessful')
@@ -37,52 +48,71 @@ return(
    <div className="modal-wrapper" >
       <div id="testbox">
          <div className="modal-close-bttn-container">
-            <button type="button" id="wsmodal-close-bttn" onClick={()=>close()}>close</button>
+            <button type="button" id="wsmodal-close-bttn" className={'calender-button'} onClick={()=>close()}>Close</button>
          </div>
          <div id="wsmodal-content-container">
-            <div>
+            <div id="modal-leftContent-container">
                <form action="">
                   <label htmlFor="workstatus">Status Discription:</label>
                   <input type="text" id="workstatus"/>
 
                   <div id="ws-submit-bttn">
-                     <button type="button" onClick={()=>submitStatus()}>Submit</button>
+                     <button type="button" className={'calender-button'} onClick={()=>submitStatus()}>Submit</button>
                   </div>
 
                </form>
 
             </div>
-            <div id="modal-calender-container">
-            <DateRangePicker>
-               <div className="date-container">
-                  <div id="calender-header">
-                  <span>Start:</span>
-                  <DateInput slot="start">
-                     {(segment) => <DateSegment segment={segment} />}
-                  </DateInput>
+            <div id="modal-rightContent-container">
+               <div id="modal-calender-container">
+               <DateRangePicker>
+                  <div className="date-container">
+                     <div id="calender-header">
+                     <span>Start:  </span>
+                     <DateInput className={'calendar-DateInput'} slot="start">
+                        {(segment) => <DateSegment className={'calenderStart'} segment={segment} />}
+                     </DateInput>
+                     </div>
+                     <hr />
+                     <div id="calender-header">
+                     <span>End:  </span>
+                     <DateInput className={'calendar-DateInput'} slot="end">
+                        {(segment) => <DateSegment className={'calenderStart'} segment={segment} />}
+                     </DateInput>
+                     </div>
                   </div>
-                  <hr />
-                  <div id="calender-header">
-                  <span>End:</span>
-                  <DateInput slot="end">
-                     {(segment) => <DateSegment segment={segment} />}
-                  </DateInput>
-                  </div>
+
+                  <Dialog>
+                     <RangeCalendar>
+                     <header>
+                        <Button slot="previous">◀</Button>
+                        <Heading />
+                        <Button slot="next">▶</Button>
+                     </header>
+                     <CalendarGrid>
+                        {(date) => <CalendarCell date={date} />}
+                     </CalendarGrid>
+                     </RangeCalendar>
+                  </Dialog>
+               </DateRangePicker>
                </div>
 
-               <Dialog>
-                  <RangeCalendar>
-                  <header>
-                     <Button slot="previous">◀</Button>
-                     <Heading />
-                     <Button slot="next">▶</Button>
-                  </header>
-                  <CalendarGrid>
-                     {(date) => <CalendarCell date={date} />}
-                  </CalendarGrid>
-                  </RangeCalendar>
-               </Dialog>
-        </DateRangePicker>
+               {/* Time components */}
+               <div className="time-container">
+                  <TimeField onChange={setStartTime}>
+                     <Label>Start Time</Label>
+                     <DateInput>
+                        {segment => <DateSegment segment={segment} />}
+                     </DateInput>
+                  </TimeField>
+                  <TimeField onChange={setEndTime}>
+                     <Label>End Start</Label>
+                     <DateInput>
+                        {segment => <DateSegment cla segment={segment} />}
+                     </DateInput>
+                  </TimeField>
+
+               </div>
          </div>
          </div>
          
