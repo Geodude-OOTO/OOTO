@@ -3,7 +3,7 @@ import {Button,TimeField, CalendarCell, CalendarGrid, CalendarGridBody, Calendar
 
 
 
-const WorkStatusModal = ({open, close, setEvents})=>{
+const WorkStatusModal = ({open, close, updateCal, setEvents})=>{
 if(open === false) return null;
 
 // let [range, setRange] = React.useState<DateRange | null>(null);

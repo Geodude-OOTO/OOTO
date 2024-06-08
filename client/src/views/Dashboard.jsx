@@ -27,7 +27,6 @@ const Dashboard = () => {
     const [modalToggle, setModalToggle] = useState(false);
     const handleModalToggle = ()=>{
         setModalToggle(!modalToggle);
-        console.log("Inside modal toggle: ", modalToggle);
     }
     // handleDateChange function updates the date state with the new date selected on the react-calendar.
     const handleDateChange = (date) => {
@@ -75,7 +74,8 @@ const Dashboard = () => {
             <button type="button" onClick={()=>{handleModalToggle()}}>Add Work Status</button>
             <WorkStatusModal open={modalToggle} close={handleModalToggle} setEvents={setEvents}/>
             <div className="react-calendar-container">
-                <Calendar onChange={handleDateChange} value={value} activeStartDate={activeStartDate} onActiveStartDateChange={handleActiveDateChange} formatShortWeekday={formatShortWeekday} />
+                <button id="ws-addEvent-bttn" onClick={()=>{handleModalToggle()}}>Add Work Status</button>
+                <Calendar onChange={handleDateChange} value={value} activeStartDate={activeStartDate} onActiveStartDateChange={handleActiveDateChange} formatShortWeekday={formatShortWeekday} />   
             </div>
             <div className="react-big-calendar-container">
             <BigCalendar date={value} onNavigate={onNavigate} events={events}   />
