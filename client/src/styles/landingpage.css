@@ -1,0 +1,33 @@
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #F2F4F8;
+}
+
+.tile {
+    border-radius: 25px;
+    border: 2px solid #32B86A;
+    background-color:  #C1FBD3;
+   
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+}
+
+.benefits-container {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    background-image: url("../assets/header.png");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+}
