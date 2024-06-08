@@ -23,3 +23,5 @@ const LogInModal = () => {
       </Modal>
     )
 };
+
+export default LogInModal;
