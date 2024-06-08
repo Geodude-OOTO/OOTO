@@ -8,7 +8,7 @@ const authUser = require('../controllers/authController.js');
 
 const router = express.Router(); 
 router.post('/register', validInfo, userRegister);  
-router.post('/login', validInfo, userLogin);
+router.post('/login', userLogin);
 router.get('/is-verify', authUser, async (req, res) => {
 try { 
     res.json({ message: 'You are authorized', user: req.user });

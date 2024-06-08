@@ -20,8 +20,8 @@ const signUpClickHandler = (event) => {
     return (
         <div>
             <h2>Login</h2>
-            <form id="logIn" action="/user/login" method="POST">
-                <input id="user" name="user" placeholder="user" type="text"></input>
+            <form id="logIn" action="/api/user/login" method="POST">
+                <input id="email" name="email" placeholder="email" type="text"></input>
                 <input id="pass" name="pass" placeholder="password" type="text"></input>
                 <button id="submit" type="submit">Log in!</button>
             </form>
