@@ -1,0 +1,287 @@
+// src/styles/customCalendarStyles.scss
+// src/styles/customCalendarStyles.scss
+@import './variables';
+@import 'react-big-calendar/lib/sass/styles';
+
+
+.react-big-calendar-container {
+  flex: 1; /* Allow the div to take available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80%; /* Adjust the height as needed */
+  max-width: 1100px; /* Optional: Set a max-width to prevent it from stretching too much */
+}
+
+// General Calendar Styles
+.rbc-calendar {
+  background-color: $main-bg-color;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.rbc-calendar *,
+.rbc-calendar *:before,
+.rbc-calendar *:after {
+  box-sizing: inherit;
+}
+
+// Agenda View Styles
+.rbc-agenda-view {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+  overflow: auto;
+
+  table.rbc-agenda-table {
+    width: 100%;
+    border: 1px solid $cell-border-color;
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    tbody > tr > td {
+      padding: 5px 10px;
+      vertical-align: top;
+    }
+
+    .rbc-agenda-time-cell {
+      padding-left: 15px;
+      padding-right: 15px;
+      text-transform: lowercase;
+    }
+
+    tbody > tr > td + td {
+      border-left: 1px solid $cell-border-color;
+    }
+
+    .rbc-rtl & {
+      tbody > tr > td + td {
+        border-left-width: 0;
+        border-right: 1px solid $cell-border-color;
+      }
+    }
+
+    tbody > tr + tr {
+      border-top: 1px solid $cell-border-color;
+    }
+
+    thead > tr > th {
+      padding: 3px 5px;
+      text-align: left;
+      border-bottom: 1px solid $cell-border-color;
+
+      .rbc-rtl & {
+        text-align: right;
+      }
+    }
+  }
+}
+
+.rbc-agenda-time-cell {
+  text-transform: lowercase;
+
+  .rbc-continues-after:after {
+    content: ' »';
+  }
+  .rbc-continues-prior:before {
+    content: '« ';
+  }
+}
+
+.rbc-agenda-date-cell,
+.rbc-agenda-time-cell {
+  white-space: nowrap;
+}
+
+.rbc-agenda-event-cell {
+  width: 100%;
+}
+
+// Day View Styles
+.rbc-time-column {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  .rbc-timeslot-group {
+    flex: 1;
+  }
+}
+
+.rbc-timeslot-group {
+  border-bottom: 1px solid $cell-border-color;
+  min-height: 40px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.rbc-time-gutter,
+.rbc-header-gutter {
+  flex: none;
+}
+
+.rbc-label {
+  padding: 0 5px;
+}
+
+.rbc-day-slot {
+  position: relative;
+
+  .rbc-events-container {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    top: 0;
+
+    &.rbc-rtl {
+      left: 10px;
+      right: 0;
+    }
+  }
+
+  .rbc-event {
+    border: 1px solid $event-border-color;
+    display: flex;
+    max-height: 100%;
+    min-height: 20px;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    overflow: hidden;
+    position: absolute;
+    background-color: $event-bg-color;
+    color: $event-text-color;
+    border-radius: $event-border-radius;
+    padding: 2px 5px;
+  }
+
+  .rbc-background-event {
+    @extend .rbc-event;
+    opacity: 0.75;
+  }
+
+  .rbc-event-label {
+    flex: none;
+    padding-right: 5px;
+    width: auto;
+  }
+
+  .rbc-event-content {
+    width: 100%;
+    flex: 1 1 0;
+    word-wrap: break-word;
+    line-height: 1;
+    height: 100%;
+    min-height: 1em;
+  }
+
+  .rbc-time-slot {
+    border-top: 1px solid lighten($cell-border-color, 10%);
+  }
+}
+
+// Toolbar (Navigation Buttons)
+.rbc-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: $toolbar-text-color;
+
+  .rbc-toolbar-label {
+    flex-grow: 1;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  & button {
+    color: $button-text-color;
+    display: inline-block;
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+    background-color: $button-bg-color;
+    border: none;
+    padding: .375rem 1rem;
+    border-radius: 4px;
+    line-height: normal;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: $button-hover-bg-color;
+    }
+  }
+}
+
+// Highlight Styles
+.rbc-today {
+  background-color: $today-highlight-bg-color;
+}
+
+.rbc-selected-cell {
+  background-color: $date-selection-bg-color;
+}
+
+// Event Styles
+.rbc-event {
+  border: none;
+  box-sizing: border-box;
+  box-shadow: none;
+  margin: 0;
+  padding: $event-padding;
+  background-color: $event-bg-color;
+  border-radius: $event-border-radius;
+  color: $event-text-color;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+
+  .rbc-slot-selecting & {
+    cursor: inherit;
+    pointer-events: none;
+  }
+
+  &.rbc-selected {
+    background-color: darken($event-bg-color, 10%);
+  }
+
+  &:focus {
+    outline: 5px auto $event-border-color;
+  }
+}
+
+.rbc-event-label {
+  @extend .rbc-ellipsis;
+  font-size: 80%;
+}
+
+.rbc-event-overlaps {
+  box-shadow: -1px 1px 5px 0px rgba(51,51,51,.5);
+}
+
+.rbc-event-continues-prior {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.rbc-event-continues-after {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.rbc-event-continues-earlier {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.rbc-event-continues-later {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+

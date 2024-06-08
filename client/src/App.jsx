@@ -2,6 +2,8 @@ import React from 'react';
 import {Routes, Route} from 'react-router-dom'
 import Dashboard from './views/Dashboard';
 import LandingPage from './views/LandingPage';
+import './styles/bigcalendar.scss';
+
 
 const App = () => {
     return (
