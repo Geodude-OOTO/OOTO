@@ -1,3 +1,8 @@
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
     background-color: #F2F4F8;
 }
@@ -6,5 +11,11 @@ body {
     border-radius: 25px;
     border: 2px solid #32B86A;
     background-color:  #C1FBD3;
+   
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
 }
 
