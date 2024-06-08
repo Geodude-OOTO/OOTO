@@ -7,7 +7,8 @@ const dotenv = require('dotenv');
 dotenv.config();
 const userRoutes = require('./routes/userRoutes'); 
 const dashboardRoute = require('./routes/dashboardRoute');
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser'); 
+const eventRoutes = require('./routes/eventsRoute');
 
 app.use(express.json());
 // Test the database connection
@@ -17,7 +18,9 @@ app.use('/build', express.static(path.join(__dirname, '../build')));
 app.use('/api/user', userRoutes);
 
 //dashboard route 
-app.use('/api/dashboard', dashboardRoute);
+app.use('/api/dashboard', dashboardRoute); 
+
+app.use('/api/events', eventRoutes);
 app.get('/*', (req, res) => {
   res.status(200).sendFile(path.join(__dirname, '../client/public/index.html'));
 });
