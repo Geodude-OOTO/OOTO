@@ -14,16 +14,6 @@ function handleCloseModal() {
 const signUpClickHandler = (event) => {
     event.preventDefault();
     setOpen(true);
-    return (
-        <Modal isOpen={modalOpen}
-        shouldCloseOnEsc={true}
-        className='overlay'
-        onRequestClose={handleCloseModal}
-        shouldCloseOnOverlayClick={true}
-        >
-            <SignUp/>
-        </Modal>
-    )
 };
 
 
@@ -36,6 +26,16 @@ const signUpClickHandler = (event) => {
                 <button id="submit" type="submit">Log in!</button>
             </form>
              <p>Don't have an account yet?</p> <button onClick={signUpClickHandler}>sign up!</button>
+            {modalOpen && (
+                <Modal isOpen={modalOpen}
+                shouldCloseOnEsc={true}
+                className='overlay'
+                onRequestClose={handleCloseModal}
+                shouldCloseOnOverlayClick={true}
+            >
+                    <SignUp/>
+                </Modal> 
+            )}
         </div>
 
     )

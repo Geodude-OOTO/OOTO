@@ -3,8 +3,8 @@ import React, { useState, useCallback, useEffect } from "react";
 const SignUp = () => {
     return (
       <div>
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Sign Up</h2>
-        <button onClick={closeModal}>close</button>
+        <h2>Sign Up</h2>
+        {/* <button onClick={handleCloseModal}>close</button> */}
         <div>This is the sign up modal</div>
         <form id="signup" action="user/register" method="POST">
             <input id="user" name="user" placeholder="user" type="text"></input>
