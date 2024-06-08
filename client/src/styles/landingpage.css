@@ -1,6 +1,6 @@
 
 * {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -22,12 +22,34 @@ body {
 .benefits-container {
     display: flex;
     justify-content: center;
+    position: absolute;
+    top: 75%;
 }
 
 .header {
-    background-image: url("../assets/header.png");
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    height: 300px;
+    display: inline-block;
+    /* position: relative; */
+
+}
+
+.header img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    //opacity: 0.5;
+}
+
+.header h1 + h3 {
+    position: relative;
+    top: 50%;
+}
+
+/* .testimonial-container {
+    position: absolute;
+    top: 100%;
+} */
+
+.testimonial-container-container {
+    position: absolute;
+    top: 100%;
 }
