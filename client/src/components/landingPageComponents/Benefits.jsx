@@ -1,10 +1,21 @@
 import React from 'react';
 import header from '../../assets/header.png';
 
+// const styles = {
+//     headerContainer: {
+//         backgroundImage: `url(${header})`,
+//         backgroundSize: '100%'
+//     }
+// };
+// className='header' style={styles.headerContainer}
+
+//<img src={header}/>
+
 const Benefits = () => {
     return (
         <div>
             <div className='header'>
+             <img src={header}/>
                 <h1>See where your entire team is at a glance!</h1>
                 <h3>Take the guesswork out of knowing who is in the office,
                     taking vacation, or working remote. 

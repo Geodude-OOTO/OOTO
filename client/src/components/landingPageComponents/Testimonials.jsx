@@ -7,7 +7,7 @@ import avatar2 from '../../assets/avatar-2.png';
 
 const Testimonials = () => {
     return (
-        <div>
+        <div className='testimonial-container-container'>
             <h2>Here is what our customers say about OOTO</h2>
             <div className='testimonial-container'>
             <div className="tile">
