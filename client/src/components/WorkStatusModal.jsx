@@ -3,7 +3,7 @@ import {Button,TimeField, CalendarCell, CalendarGrid, CalendarGridBody, Calendar
 
 
 
-const WorkStatusModal = ({open, close})=>{
+const WorkStatusModal = ({open, close, updateCal})=>{
 if(open === false) return null;
 
 // let [range, setRange] = React.useState<DateRange | null>(null);
@@ -36,6 +36,13 @@ async function submitStatus(){
    if(req.status == 200){
       alert('Success');
       const resData = await req.json();
+      const transformedEvents = resData.map(event => ({
+         ...event,
+         start: new Date(event.start),
+         end: new Date(event.end)
+     }));
+     console.log ('response we get after getting events', transformedEvents)
+     updateCal(transformedEvents);
       close()
    }else{
       return alert('Unsuccessful')
