@@ -47,7 +47,6 @@ eventController.addEvent = async (req, res, next) => {
 
     try {
         const result = await pool.query(query);
-        res.locals.rows = result.rows; // Set the result in res.locals
         next(); // Call the next middleware
     } catch (error) {
         res.status(500).json({ error: 'Error adding event', details: error.message });
