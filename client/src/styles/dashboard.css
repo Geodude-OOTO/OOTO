@@ -1,9 +1,15 @@
+* {
+    font-family: "Roboto", sans-serif;
+}
+
 body {
     background-color: #F2F4F8;
 }
 
-.dashboard-container{
+.dashboard-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center; 
     height: 100vh;
+    gap: 40px;
 }

@@ -22,10 +22,10 @@ const signUpClickHandler = (event) => {
             <h2>Login</h2>
             <form id="logIn" action="/api/user/login" method="POST">
                 <input id="email" name="email" placeholder="email" type="text"></input>
-                <input id="pass" name="pass" placeholder="password" type="text"></input>
+                <input id="password" name="password" placeholder="password" type="text"></input>
                 <button id="submit" type="submit">Log in!</button>
             </form>
-             <p>Don't have an account yet?</p> <button onClick={signUpClickHandler}>sign up!</button>
+             <p>Don't have an account yet? <button onClick={signUpClickHandler}>sign up!</button></p>
             {modalOpen && (
                 <Modal isOpen={modalOpen}
                 shouldCloseOnEsc={true}

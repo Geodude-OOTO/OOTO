@@ -1,0 +1,256 @@
+
+
+.modal-wrapper{
+   position: absolute;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100vw;
+   height: 100vh;
+
+ 
+   /* background-color: black;
+   opacity: 0.5; */
+   z-index: 2;
+   
+
+   
+}
+.modal-wrapper::before {
+   /* position: absolute; */
+   width: 100vw;
+   height: 100vh;
+   background-color: black;
+   opacity: 0.5;
+   /* z-index: 2; */
+   
+   
+}
+
+#testbox {
+
+   /* display: flex; */
+   width: 500px;
+   height: 500px;
+   background-color: #ffffff;
+   padding: 10px;
+   border-radius: 10px;
+
+   box-shadow: 1px 1px 4px rgba(0, 0, 0,1);
+}
+
+.calender-button{
+  background-color: #36b96e;
+  border-radius: 5px;
+  border-color: #36b96e;
+  box-shadow: .5px .5px 2px #36b96e;
+}
+.calender-button:hover{
+  background-color: #37c976;
+  box-shadow: .5px .5px 2px #37c976;
+
+}
+
+#modal-leftContent-container {
+  display: flex;
+  position: relative;
+  gap: 4px;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+#modal-rightContent-container {
+   /* display: flex; */
+   /* background-color: aliceblue; */
+   padding: 1px;
+   /* border-radius: 8px; */
+
+}
+
+.modal-close-bttn-container{
+  display: flex;
+  justify-content: end;
+  margin-bottom: 6px;
+}
+
+#wsmodal-content-container {
+  display: flex;
+}
+
+
+#modal-calender-container {
+  background-color: aliceblue;
+  padding: 4px;
+  padding-top: 6px;
+  padding-bottom: 4px;
+  border-radius: 8px;
+  margin: 2px;
+}
+
+/* Calender Stuff */
+
+.date-container{
+  display: flex;
+  justify-content: center;
+  background: white;
+  border-radius: 5px;
+  width: 250px;
+
+  margin-bottom: 8px;
+
+  /* box-shadow:4px 4px 10px rgba(0,0,0,0.06); */
+  box-shadow: 1px 1px 4px rgba(0, 0, 0,1);
+}
+
+#calender-header {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
+
+  margin-bottom: 4px;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.react-aria-DateRangePicker{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.calendar-DateInput {
+  display: flex;
+  
+}
+
+
+.react-aria-RangeCalendar {
+   width: fit-content;
+   max-width: 100%;
+   color: var(--text-color);
+ 
+   & header {
+     display: flex;
+     align-items: center;
+     margin: 0 4px .5rem 4px;
+ 
+     .react-aria-Heading {
+       flex: 1;
+       margin: 0;
+       text-align: center;
+       font-size: 1.375rem;
+     }
+   }
+ 
+   .react-aria-Button {
+     width: 2rem;
+     height: 2rem;
+     padding: 0;
+   }
+ 
+   & table {
+     border-collapse: collapse; /* Controls the spacing between the table's columns */
+ 
+     & td {
+       padding: 1px 0;
+     }
+   }
+ 
+   .react-aria-CalendarCell {
+     width: 2.286rem;
+     line-height: 2.286rem;
+     text-align: center;
+     border-radius: 6px;
+     cursor: default;
+     outline: none;
+     forced-color-adjust: none;
+ 
+     &[data-outside-month] {
+       display: none;
+     }
+ 
+     &[data-pressed] {
+       background: var(--gray-100);
+     }
+ 
+     &[data-focus-visible] {
+      outline: 2px solid rgb(81, 40, 227);
+      outline-offset: -2px;
+     }
+ 
+     &[data-selected] {
+        background: #36b96e; /*Controls the table cell's background color when selected*/
+        color: whitesmoke; /*Controlls selected cells font color*/ 
+        border-radius: 0;
+ 
+       &[data-focus-visible] {
+         outline-color: red;
+         outline-offset: -3px;
+       }
+     }
+ 
+     &[data-selection-start] {
+       border-start-start-radius: 6px;
+       border-end-start-radius: 6px;
+     }
+ 
+     &[data-selection-end] {
+       border-start-end-radius: 6px;
+       border-end-end-radius: 6px;
+     }
+   }
+ }
+
+
+ /* TIME FIELD */
+
+ .time-container{
+  margin-top: 8px;
+ }
+
+ .react-aria-TimeField {
+  color: black;
+}
+
+
+.react-aria-DateInput {
+  display: flex;
+  padding: 4px;
+  border: 1px solid antiquewhite;
+  border-radius: 6px;
+  background: aliceblue;
+  width: fit-content;
+  min-width: 150px;
+  white-space: nowrap;
+  forced-color-adjust: none;
+
+  &[data-focus-within] {
+    outline: 2px solid #36b96e;
+    outline-offset: -1px;
+  }
+}
+
+.react-aria-DateSegment {
+  padding: 0 2px;
+  font-variant-numeric: tabular-nums;
+  text-align: end;
+  color: var(--text-color);
+
+  &[data-type=literal] {
+    padding: 0;
+  }
+
+  &[data-placeholder] {
+    color: var(--text-color-placeholder);
+    font-style: italic;
+  }
+
+  &:focus {
+    color: var(--highlight-foreground);
+    background: lightgreen;
+    outline: none;
+    border-radius: 4px;
+    caret-color: transparent;
+  }
+}
