@@ -1,5 +1,6 @@
 import React from 'react';
 import header from '../../assets/header.png';
+import '../../styles/landingpage.css';
 
 // const styles = {
 //     headerContainer: {
@@ -15,7 +16,7 @@ const Benefits = () => {
     return (
         <div>
             <div className='header'>
-             <img src={header}/>
+             <img className='header-logo' src={header}/>
                 <h1>See where your entire team is at a glance!</h1>
                 <h3>Take the guesswork out of knowing who is in the office,
                     taking vacation, or working remote. 

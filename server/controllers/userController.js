@@ -87,12 +87,12 @@ const userRegister = async(req, res, next) => {
 const userLogin = async (req, res, next) => {
   try {
       // Destructure the req.body
-      const { email, password } = req.body;
+      const { username, password } = req.body;
 
       console.log('Login Request Body:', req.body);
 
       // Check if the user doesn't exist (if not, throw error)
-      const user = await pool.query("SELECT * FROM activeUsers WHERE user_email = $1", [email]);
+      const user = await pool.query("SELECT * FROM activeUsers WHERE user_email = $1", [username]);
       console.log('Response from login query:', user.rows[0]);
 
       if (user.rows.length === 0) {

@@ -71,14 +71,14 @@ const Dashboard = () => {
     
     return (
         <div className="dashboard-container">
-            
-            <WorkStatusModal open={modalToggle} close={handleModalToggle} updateCal={(newEvents)=>{setEvents(newEvents)}}/>
+            {/* <button type="button" onClick={()=>{handleModalToggle()}}>Add Work Status</button> */}
+            <WorkStatusModal open={modalToggle} close={handleModalToggle} setEvents={setEvents}/>
             <div className="react-calendar-container">
                 <button id="ws-addEvent-bttn" onClick={()=>{handleModalToggle()}}>Add Work Status</button>
                 <Calendar onChange={handleDateChange} value={value} activeStartDate={activeStartDate} onActiveStartDateChange={handleActiveDateChange} formatShortWeekday={formatShortWeekday} />   
             </div>
             <div className="react-big-calendar-container">
-            <BigCalendar date={value} onNavigate={onNavigate} events={events}  />
+            <BigCalendar date={value} onNavigate={onNavigate} events={events}   />
             </div>
         </div>
     );

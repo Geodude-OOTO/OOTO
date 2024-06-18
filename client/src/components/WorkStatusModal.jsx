@@ -3,7 +3,7 @@ import {Button,TimeField, CalendarCell, CalendarGrid, CalendarGridBody, Calendar
 
 
 
-const WorkStatusModal = ({open, close, updateCal})=>{
+const WorkStatusModal = ({open, close, updateCal, setEvents})=>{
 if(open === false) return null;
 
 // let [range, setRange] = React.useState<DateRange | null>(null);
@@ -27,7 +27,7 @@ async function submitStatus(){
    })
 
    console.log(reqData)
-   const req = await fetch('/api/events', {
+   const req = await fetch('http://localhost:3000/api/events', {
       method: 'POST',
       headers: { 'Content-type': 'application/json'},
       body: reqData,
@@ -36,13 +36,14 @@ async function submitStatus(){
    if(req.status == 200){
       alert('Success');
       const resData = await req.json();
+      console.log (resData)
       const transformedEvents = resData.map(event => ({
          ...event,
          start: new Date(event.start),
          end: new Date(event.end)
      }));
      console.log ('response we get after getting events', transformedEvents)
-     updateCal(transformedEvents);
+     setEvents(transformedEvents);
       close()
    }else{
       return alert('Unsuccessful')
